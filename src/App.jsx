@@ -9,18 +9,18 @@ import AppLayout from './ui/AppLayout';
 // Implement a "Render-As-You-Fetch" strategy in the router.
 
 const router = createBrowserRouter([
-  {
-    element: <AppLayout />,
-    children: [
-      { path: '/', element: <Home /> },
-      { path: '/menu', element: <Menu />, loader: menuLoader }, // 2. Provide loader to path.
-      { path: '/cart', element: <Cart /> },
-      { path: '/order/new', element: <CreateOrder /> },
-      { path: '/order/:orderId', element: <Order /> },
-    ],
-  },
+    {
+        element: <AppLayout />,
+        children: [
+            { path: '/', element: <Home /> },
+            { path: '/menu', element: <Menu />, loader: menuLoader }, // 2. Provide loader to path.
+            { path: '/cart', element: <Cart /> },
+            { path: '/order/new', element: <CreateOrder /> },
+            { path: '/order/:orderId', element: <Order /> },
+        ],
+    },
 ]);
 
 export default function App() {
-  return <RouterProvider router={router} />;
+    return <RouterProvider router={router} />;
 }
