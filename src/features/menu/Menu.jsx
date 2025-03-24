@@ -3,7 +3,7 @@ import { getMenu } from '../../services/apiRestaurant';
 import MenuItem from './MenuItem';
 
 function Menu() {
-    // 3. Get data from loader with custom hook.
+    // 3a. Get data from loader with custom hook.
     const menu = useLoaderData();
 
     return (
@@ -15,7 +15,7 @@ function Menu() {
     );
 }
 
-// 1. Create loader function.
+// 1a. Create loader function.
 export async function loader() {
     const menu = await getMenu();
     return menu;
