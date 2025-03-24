@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import Username from '../features/user/Username';
+import SearchOrder from '../features/order/SearchOrder';
 
 export default function Header() {
     return (
@@ -7,6 +8,7 @@ export default function Header() {
             <Link to="/" className="tracking-widest">
                 Crustly Co.
             </Link>
+            <SearchOrder />
             <Username />
         </header>
     );
