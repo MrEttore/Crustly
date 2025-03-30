@@ -1,5 +1,6 @@
 import { Form, redirect, useActionData, useNavigation } from 'react-router-dom';
 // import { useState } from 'react';
+import { useSelector } from 'react-redux';
 import { createOrder } from '../../services/apiRestaurant';
 import Button from '../../ui/Button';
 
@@ -35,6 +36,7 @@ const fakeCart = [
 
 function CreateOrder() {
     const navigation = useNavigation();
+    const username = useSelector((state) => state.user.username);
     const isSubmitting = navigation.state === 'submitting';
 
     // 3b. Get data from action with custom hook.
@@ -57,6 +59,7 @@ function CreateOrder() {
                         name="customer"
                         required
                         className="input"
+                        defaultValue={username}
                     />
                 </div>
 
