@@ -1,7 +1,8 @@
 import { Outlet, useNavigation } from 'react-router-dom';
+
 import CartOverview from '../features/cart/CartOverview';
-import Loader from './Loader';
 import Header from './Header';
+import Loader from './Loader';
 
 export default function AppLayout() {
     // Get global app loading state with navigation hook.

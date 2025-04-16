@@ -1,15 +1,15 @@
 import { useState } from 'react';
+
 import { useNavigate } from 'react-router-dom';
 
 export default function SearchOrder() {
     const [query, setQuery] = useState('');
     const navigate = useNavigate();
 
-    // Navigate to the order page when the form is submitted.
-
     function handleSubmit(e) {
         e.preventDefault();
         if (!query) return;
+
         navigate(`/order/${query}`);
         setQuery('');
     }
