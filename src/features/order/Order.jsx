@@ -1,4 +1,7 @@
+import { useEffect } from 'react';
+
 import { useFetcher, useLoaderData } from 'react-router-dom';
+
 import { getOrder } from '../../services/apiRestaurant';
 import {
     calcMinutesLeft,
@@ -6,7 +9,6 @@ import {
     formatDate,
 } from '../../utils/helpers';
 import OrderItem from '../order/OrderItem';
-import { useEffect } from 'react';
 import UpdateOrder from './UpdateOrder';
 
 function Order() {
