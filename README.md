@@ -22,7 +22,7 @@ Crustly is a modern React + Vite web app that allows users to easily order delic
 
 ## 🔗 Live Demo
 
-Try it out here: **[crustly.netlify.app](https://your-crustly-url.netlify.app)**  
+Try it out here: **[crustly.netlify.app](https://crustly.netlify.app)**
 
 ## 🏗️ Architecture Notes
 
