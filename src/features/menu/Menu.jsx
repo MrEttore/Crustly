@@ -18,6 +18,7 @@ function Menu() {
 // 1a. Create loader function.
 export async function loader() {
     const menu = await getMenu();
+
     return menu;
 }
 
