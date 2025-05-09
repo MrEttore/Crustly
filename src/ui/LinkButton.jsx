@@ -4,7 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 export default function LinkButton({ children, to }) {
     const navigate = useNavigate();
 
-    const className = 'text-sm text-blue-500 hover:text-blue-600';
+    const className =
+        'px-3 py-1 bg-red-50 rounded-full text-sm text-[#842424]/80 hover:text-[#842424]';
 
     if (to === '-1')
         return (
