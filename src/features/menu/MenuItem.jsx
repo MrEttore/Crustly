@@ -30,18 +30,24 @@ function MenuItem({ pizza }) {
             <img
                 src={imageUrl}
                 alt={name}
-                className={`min-h-48 ${soldOut ? 'opacity-70 grayscale' : ''}`}
+                className={`min-h-48 rounded-3xl ${soldOut ? 'opacity-70 grayscale' : ''}`}
             />
             <div className="flex grow flex-col pt-0.5">
-                <p className="text-xl font-extrabold">{name}</p>
-                <p className="text capitalize italic text-stone-500">
-                    {ingredients.join(', ')}
-                </p>
+                <div className="w-fit rounded-md bg-[#842424]/20 px-3 py-1 shadow-sm">
+                    <p className="w-fit text-xl font-semibold text-red-50">
+                        {name}
+                    </p>
+                    <p className="text w-fit font-light capitalize italic text-red-50">
+                        {ingredients.join(', ')}
+                    </p>
+                </div>
                 <div className="mt-auto flex items-center justify-between">
                     {!soldOut ? (
-                        <p className="text-sm">{formatCurrency(unitPrice)}</p>
+                        <p className="rounded-md bg-[#842424]/50 px-3 py-1 text-sm font-semibold text-red-50">
+                            {formatCurrency(unitPrice)}
+                        </p>
                     ) : (
-                        <p className="text-sm uppercase text-stone-700">
+                        <p className="text-sm uppercase text-red-50">
                             Sold out
                         </p>
                     )}

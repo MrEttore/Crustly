@@ -41,10 +41,8 @@ function CreateOrder() {
     if (!cart.length) return <EmptyCart />;
 
     return (
-        <div className="px-4 py-6">
-            <h2 className="mb-8 text-xl font-semibold">
-                Ready to order? Let&apos;s go!
-            </h2>
+        <div className="px-4 py-6 text-red-50">
+            <h2 className="mb-8 text-2xl font-semibold">Ready to order?</h2>
 
             <Form method="POST" action="/order/new">
                 <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-center">
@@ -69,7 +67,7 @@ function CreateOrder() {
                         />
                     </div>
                     {formsErrors?.phone && (
-                        <p className="mt-2 rounded-md bg-red-100 p-2 text-xs text-red-700">
+                        <p className="mt-2 rounded-md bg-orange-300/80 p-2 text-xs text-orange-800">
                             {formsErrors.phone}
                         </p>
                     )}
@@ -87,7 +85,7 @@ function CreateOrder() {
                             defaultValue={address}
                         />
                         {addressStatus === 'error' && (
-                            <p className="mt-2 rounded-md bg-red-100 p-2 text-xs text-red-700">
+                            <p className="mt-2 rounded-md bg-orange-300/80 p-2 text-xs text-orange-800">
                                 {errorAddress}
                             </p>
                         )}
@@ -116,7 +114,7 @@ function CreateOrder() {
                         id="priority"
                         value={withPriority}
                         onChange={(e) => setWithPriority(e.target.checked)}
-                        className="h-6 w-6 accent-yellow-400 focus:outline-none focus:ring focus:ring-yellow-400 focus:ring-offset-2"
+                        className="h-6 w-6 accent-[#842424]/60 focus:outline-none focus:ring focus:ring-[#842424] focus:ring-offset-2"
                     />
                     <label htmlFor="priority" className="font-extrabold">
                         Want to yo give your order priority?
@@ -164,7 +162,7 @@ export async function action({ request }) {
 
     const errors = {};
     if (!isValidPhone(order.phone))
-        errors.phone = 'Please enter a valid phone number';
+        errors.phone = 'Please enter a valid phone number.';
 
     if (Object.keys(errors).length > 0) return errors;
 

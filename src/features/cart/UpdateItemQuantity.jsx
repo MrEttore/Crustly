@@ -14,7 +14,9 @@ function UpdateItemQuantity({ pizzaId, currentQuantity }) {
             >
                 -
             </Button>
-            <span className="text-sm font-medium">{currentQuantity}</span>
+            <span className="text-sm font-medium text-red-50">
+                {currentQuantity}
+            </span>
             <Button
                 type="round"
                 onClick={() => dispatch(increaseItemQuantity(pizzaId))}
