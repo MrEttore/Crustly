@@ -33,11 +33,11 @@ function Order() {
     const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
     return (
-        <div className="space-y-8 px-4 py-6">
-            <div className="flex flex-wrap items-center justify-between gap-2 text-red-50">
-                <h2 className="text-xl font-semibold">
+        <div className="mx-auto mt-8 max-w-2xl space-y-8 rounded-3xl bg-cream px-4 py-8 shadow-elegant">
+            <div className="flex flex-wrap items-center justify-between gap-2 text-primary-dark">
+                <h2 className="font-display text-2xl font-bold">
                     Order{' '}
-                    <span className="rounded-md bg-[#842424]/40 p-1">
+                    <span className="rounded-md bg-gold/40 p-1 text-primary-dark">
                         #{id}
                     </span>{' '}
                     status
@@ -45,55 +45,43 @@ function Order() {
 
                 <div className="space-x-2">
                     {priority && (
-                        <span className="rounded-md bg-[#842424] px-3 py-1 text-sm uppercase tracking-wide text-red-50">
+                        <span className="rounded-md bg-gold px-3 py-1 text-sm font-bold uppercase tracking-wide text-primary-dark">
                             Priority
                         </span>
                     )}
-                    <span className="rounded-md bg-green-700 px-3 py-1 text-sm uppercase tracking-wide text-green-50">
-                        {status} order
+                    <span className="rounded-md bg-primary-dark px-3 py-1 text-sm font-bold uppercase tracking-wide text-cream">
+                        {status}
                     </span>
                 </div>
             </div>
 
-            <div className="flex flex-wrap items-center justify-between gap-2 rounded-md bg-[#842424]/20 px-6 py-5 text-red-50">
-                <p className="font-medium">
-                    {deliveryIn >= 0
-                        ? `Only ${calcMinutesLeft(estimatedDelivery)} minutes left`
-                        : 'Order should have arrived'}
-                </p>
-                <p className="text-xs">
-                    (Estimated delivery: {formatDate(estimatedDelivery)})
-                </p>
+            <div className="flex flex-col gap-2 text-lg font-semibold text-primary-dark">
+                <span>
+                    Estimated delivery:{' '}
+                    <span className="font-bold text-gold">
+                        {formatDate(estimatedDelivery)}
+                    </span>{' '}
+                    ({deliveryIn} min)
+                </span>
+                <span>
+                    Total:{' '}
+                    <span className="font-bold text-gold">
+                        {formatCurrency(orderPrice + (priorityPrice || 0))}
+                    </span>
+                </span>
             </div>
 
-            <ul className="divide-y divide-red-50 border-b border-t">
+            <ul className="divide-y divide-gold/30">
                 {cart.map((item) => (
                     <OrderItem
                         item={item}
-                        ingredients={
-                            fetcher.data?.find((el) => el.id === item.pizzaId)
-                                .ingredients ?? []
-                        }
-                        isLoadingIngredients={fetcher.state === 'loading'}
                         key={item.pizzaId}
+                        isLoadingIngredients={false}
+                        ingredients={item.ingredients || []}
                     />
                 ))}
             </ul>
 
-            <div className="space-y-2 rounded-md bg-[#842424]/40 px-6 py-5 text-red-50">
-                <p className="text-sm font-medium">
-                    Price pizza: {formatCurrency(orderPrice)}
-                </p>
-                {priority && (
-                    <p className="text-sm font-medium">
-                        Price priority: {formatCurrency(priorityPrice)}
-                    </p>
-                )}
-                <p className="text-lg font-bold">
-                    To pay on delivery:{' '}
-                    {formatCurrency(orderPrice + priorityPrice)}
-                </p>
-            </div>
             {!priority && <UpdateOrder order={order} />}
         </div>
     );

@@ -8,7 +8,7 @@ export default function UpdateOrder({ order }) {
 
     return (
         // Send data (POST) without navigating away to another route (like with <Form/>).
-        <fethcer.Form method="PATCH" className="text-right">
+        <fethcer.Form method="PATCH" className="text-right mt-4">
             <Button type="primary">Make priority</Button>
         </fethcer.Form>
     );

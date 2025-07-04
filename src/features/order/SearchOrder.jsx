@@ -15,12 +15,12 @@ export default function SearchOrder() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="flex items-center">
             <input
                 placeholder="Search order #"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                className="w-28 rounded-xl bg-red-50 px-4 py-2 text-sm font-normal text-[#ab4343] outline-none transition-all duration-300 focus:ring focus:ring-[#ab4343] focus:ring-opacity-50 sm:w-64 sm:focus:w-72"
+                className="w-28 rounded-xl bg-cream px-4 py-2 text-base font-normal text-primary-dark outline-none transition-all duration-300 focus:ring-2 focus:ring-gold focus:ring-opacity-70 sm:w-64 sm:focus:w-72 shadow-elegant border border-gold/30 placeholder:text-stone-400"
             ></input>
         </form>
     );

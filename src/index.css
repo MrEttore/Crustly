@@ -2,16 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    font-family: theme('fontFamily.sans');
+    background-color: theme('colors.cream.DEFAULT');
+    color: theme('colors.primary.dark');
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    background: linear-gradient(120deg, theme('colors.cream.DEFAULT') 60%, theme('colors.primary.light') 100%);
+    min-height: 100vh;
+    font-family: theme('fontFamily.sans');
+    font-size: 1rem;
+    color: theme('colors.primary.dark');
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: theme('fontFamily.display');
+    color: theme('colors.primary.DEFAULT');
+    font-weight: 700;
+    letter-spacing: 0.01em;
+  }
+}
+
 @layer components {
     .input {
-        @apply rounded-xl border border-stone-200 px-4 py-2 text-sm font-normal text-[#842424] transition-all duration-300 focus:outline-none focus:ring focus:ring-[#ab4343] md:px-6 md:py-3;
+        @apply rounded-2xl border border-cream-dark px-4 py-2 text-base font-normal text-primary-dark bg-cream transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-dark focus:ring-offset-2 md:px-6 md:py-3 shadow-elegant placeholder:text-stone-400;
     }
 
     /* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
     .loader {
         width: 45px;
         aspect-ratio: 0.75;
-        --c: no-repeat linear-gradient(theme(colors.stone.800) 0 0);
+        --c: no-repeat linear-gradient(theme(colors.gold.DEFAULT) 0 0);
         background:
             var(--c) 0% 50%,
             var(--c) 50% 50%,

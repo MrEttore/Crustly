@@ -26,47 +26,42 @@ function MenuItem({ pizza }) {
     }
 
     return (
-        <li className="text flex gap-4 py-2">
+        <li className="flex flex-col md:flex-row gap-6 py-6 items-center md:items-start">
             <img
                 src={imageUrl}
                 alt={name}
-                className={`min-h-48 rounded-3xl ${soldOut ? 'opacity-70 grayscale' : ''}`}
+                className={`w-32 h-32 object-cover rounded-3xl shadow-elegant border-4 border-gold/40 ${soldOut ? 'opacity-60 grayscale' : ''}`}
             />
-            <div className="flex grow flex-col pt-0.5">
-                <div className="w-fit rounded-md bg-[#842424]/20 px-3 py-1 shadow-sm">
-                    <p className="w-fit text-xl font-semibold text-red-50">
+            <div className="flex grow flex-col gap-2 md:pt-2">
+                <div className="w-fit rounded-xl bg-cream/80 px-4 py-2 shadow-elegant border border-gold/30">
+                    <p className="text-2xl font-display font-bold text-primary-dark drop-shadow-sm">
                         {name}
                     </p>
-                    <p className="text w-fit font-light capitalize italic text-red-50">
+                    <p className="font-light capitalize italic text-primary-dark/80 text-base">
                         {ingredients.join(', ')}
                     </p>
                 </div>
-                <div className="mt-auto flex items-center justify-between">
+                <div className="mt-auto flex items-center justify-between gap-4">
                     {!soldOut ? (
-                        <p className="rounded-md bg-[#842424]/50 px-3 py-1 text-sm font-semibold text-red-50">
+                        <p className="rounded-xl bg-gold/80 px-4 py-1 text-lg font-bold text-primary-dark shadow-elegant">
                             {formatCurrency(unitPrice)}
                         </p>
                     ) : (
-                        <p className="text-sm uppercase text-red-50">
-                            Sold out
-                        </p>
+                        <p className="text-lg uppercase text-stone-400 font-semibold">Sold out</p>
                     )}
-
-                    {isInCart && (
-                        <div className="flex items-center gap-3 sm:gap-8">
-                            <UpdateItemQuantity
-                                pizzaId={id}
-                                currentQuantity={currentQuantity}
-                            />
-                            <DeleteItem pizzaId={id} />
-                        </div>
-                    )}
-
-                    {!soldOut && !isInCart && (
-                        <Button type="small" onClick={handleAddToCart}>
-                            Add to cart
-                        </Button>
-                    )}
+                    <div className="flex gap-2 items-center">
+                        {!soldOut && !isInCart && (
+                            <Button type="small" onClick={handleAddToCart}>
+                                Add
+                            </Button>
+                        )}
+                        {isInCart && (
+                            <div className="flex gap-2 items-center">
+                                <UpdateItemQuantity pizzaId={id} currentQuantity={currentQuantity} />
+                                <DeleteItem pizzaId={id} />
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
         </li>
