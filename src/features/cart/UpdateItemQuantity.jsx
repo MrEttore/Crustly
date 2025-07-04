@@ -12,16 +12,16 @@ function UpdateItemQuantity({ pizzaId, currentQuantity }) {
                 type="round"
                 onClick={() => dispatch(decreaseItemQuantity(pizzaId))}
             >
-                -
+                <span className="font-bold">-</span>
             </Button>
-            <span className="text-sm font-medium text-red-50">
+            <span className="text-base font-semibold text-primary-dark">
                 {currentQuantity}
             </span>
             <Button
                 type="round"
                 onClick={() => dispatch(increaseItemQuantity(pizzaId))}
             >
-                +
+                <span className="font-bold">+</span>
             </Button>
         </div>
     );
