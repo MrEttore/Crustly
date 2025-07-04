@@ -41,12 +41,16 @@ function CreateOrder() {
     if (!cart.length) return <EmptyCart />;
 
     return (
-        <div className="px-4 py-8 bg-cream rounded-3xl shadow-elegant max-w-2xl mx-auto mt-8">
-            <h2 className="mb-8 text-2xl font-display font-bold text-primary-dark">Ready to order?</h2>
+        <div className="mx-auto mt-8 max-w-2xl rounded-3xl bg-cream px-4 py-8 shadow-elegant">
+            <h2 className="mb-8 font-display text-2xl font-bold text-primary-dark">
+                Ready to order?
+            </h2>
 
             <Form method="POST" action="/order/new" className="space-y-6">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                    <label className="sm:basis-40 text-base font-semibold text-primary-dark">First Name</label>
+                    <label className="text-base font-semibold text-primary-dark sm:basis-40">
+                        First Name
+                    </label>
                     <input
                         type="text"
                         name="customer"
@@ -57,7 +61,9 @@ function CreateOrder() {
                 </div>
 
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                    <label className="sm:basis-40 text-base font-semibold text-primary-dark">Phone number</label>
+                    <label className="text-base font-semibold text-primary-dark sm:basis-40">
+                        Phone number
+                    </label>
                     <div className="grow">
                         <input
                             type="tel"
@@ -74,7 +80,9 @@ function CreateOrder() {
                 </div>
 
                 <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center">
-                    <label className="sm:basis-40 text-base font-semibold text-primary-dark">Address</label>
+                    <label className="text-base font-semibold text-primary-dark sm:basis-40">
+                        Address
+                    </label>
                     <div className="grow">
                         <input
                             type="text"

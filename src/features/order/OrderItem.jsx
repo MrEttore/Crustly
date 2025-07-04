@@ -6,7 +6,7 @@ function OrderItem({ item, isLoadingIngredients, ingredients }) {
     return (
         <li className="space-y-1 py-4 text-primary-dark">
             <div className="flex items-center justify-between gap-4">
-                <p className="text-xl font-display font-bold">
+                <p className="font-display text-xl font-bold">
                     <span className="text-lg font-bold text-gold">
                         {quantity}&times;
                     </span>{' '}

@@ -26,18 +26,18 @@ function MenuItem({ pizza }) {
     }
 
     return (
-        <li className="flex flex-col md:flex-row gap-6 py-6 items-center md:items-start">
+        <li className="flex flex-col items-center gap-6 py-6 md:flex-row md:items-start">
             <img
                 src={imageUrl}
                 alt={name}
-                className={`w-32 h-32 object-cover rounded-3xl shadow-elegant border-4 border-gold/40 ${soldOut ? 'opacity-60 grayscale' : ''}`}
+                className={`h-32 w-32 rounded-3xl border-4 border-gold/40 object-cover shadow-elegant ${soldOut ? 'opacity-60 grayscale' : ''}`}
             />
             <div className="flex grow flex-col gap-2 md:pt-2">
-                <div className="w-fit rounded-xl bg-cream/80 px-4 py-2 shadow-elegant border border-gold/30">
-                    <p className="text-2xl font-display font-bold text-primary-dark drop-shadow-sm">
+                <div className="w-fit rounded-xl border border-gold/30 bg-cream/80 px-4 py-2 shadow-elegant">
+                    <p className="font-display text-2xl font-bold text-primary-dark drop-shadow-sm">
                         {name}
                     </p>
-                    <p className="font-light capitalize italic text-primary-dark/80 text-base">
+                    <p className="text-base font-light capitalize italic text-primary-dark/80">
                         {ingredients.join(', ')}
                     </p>
                 </div>
@@ -47,17 +47,22 @@ function MenuItem({ pizza }) {
                             {formatCurrency(unitPrice)}
                         </p>
                     ) : (
-                        <p className="text-lg uppercase text-stone-400 font-semibold">Sold out</p>
+                        <p className="text-lg font-semibold uppercase text-stone-400">
+                            Sold out
+                        </p>
                     )}
-                    <div className="flex gap-2 items-center">
+                    <div className="flex items-center gap-2">
                         {!soldOut && !isInCart && (
                             <Button type="small" onClick={handleAddToCart}>
                                 Add
                             </Button>
                         )}
                         {isInCart && (
-                            <div className="flex gap-2 items-center">
-                                <UpdateItemQuantity pizzaId={id} currentQuantity={currentQuantity} />
+                            <div className="flex items-center gap-2">
+                                <UpdateItemQuantity
+                                    pizzaId={id}
+                                    currentQuantity={currentQuantity}
+                                />
                                 <DeleteItem pizzaId={id} />
                             </div>
                         )}

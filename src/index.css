@@ -3,31 +3,40 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    font-family: theme('fontFamily.sans');
-    background-color: theme('colors.cream.DEFAULT');
-    color: theme('colors.primary.dark');
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  body {
-    background: linear-gradient(120deg, theme('colors.cream.DEFAULT') 60%, theme('colors.primary.light') 100%);
-    min-height: 100vh;
-    font-family: theme('fontFamily.sans');
-    font-size: 1rem;
-    color: theme('colors.primary.dark');
-  }
-  h1, h2, h3, h4, h5, h6 {
-    font-family: theme('fontFamily.display');
-    color: theme('colors.primary.DEFAULT');
-    font-weight: 700;
-    letter-spacing: 0.01em;
-  }
+    html {
+        font-family: theme('fontFamily.sans');
+        background-color: theme('colors.cream.DEFAULT');
+        color: theme('colors.primary.dark');
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+        background: linear-gradient(
+            120deg,
+            theme('colors.cream.DEFAULT') 60%,
+            theme('colors.primary.light') 100%
+        );
+        min-height: 100vh;
+        font-family: theme('fontFamily.sans');
+        font-size: 1rem;
+        color: theme('colors.primary.dark');
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: theme('fontFamily.display');
+        color: theme('colors.primary.DEFAULT');
+        font-weight: 700;
+        letter-spacing: 0.01em;
+    }
 }
 
 @layer components {
     .input {
-        @apply rounded-2xl border border-cream-dark px-4 py-2 text-base font-normal text-primary-dark bg-cream transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary-dark focus:ring-offset-2 md:px-6 md:py-3 shadow-elegant placeholder:text-stone-400;
+        @apply rounded-2xl border border-cream-dark bg-cream px-4 py-2 text-base font-normal text-primary-dark shadow-elegant transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-primary-dark focus:ring-offset-2 md:px-6 md:py-3;
     }
 
     /* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
