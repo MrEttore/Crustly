@@ -7,9 +7,9 @@ import Button from '../../ui/Button';
 import { updateName } from './userSlice';
 
 function CreateUser() {
+    const [username, setUsername] = useState('');
     const dispatch = useDispatch();
     const navigate = useNavigate();
-    const [username, setUsername] = useState('');
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -25,7 +25,7 @@ function CreateUser() {
             onSubmit={handleSubmit}
             className="flex flex-col items-center gap-2"
         >
-            <p className="mb-4 text-base font-light text-cream md:text-lg">
+            <p className="mb-4 text-base font-normal text-zinc-600 md:text-lg">
                 Please, start by telling us your name:
             </p>
 

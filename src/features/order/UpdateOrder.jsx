@@ -1,16 +1,17 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useFetcher } from 'react-router-dom';
 
 import { updateOrder } from '../../services/apiRestaurant';
 import Button from '../../ui/Button';
 
 export default function UpdateOrder({ order }) {
-    const fethcer = useFetcher();
+    const fetcher = useFetcher();
 
     return (
         // Send data (POST) without navigating away to another route (like with <Form/>).
-        <fethcer.Form method="PATCH" className="mt-4 text-right">
+        <fetcher.Form method="PATCH" className="mt-4 text-right">
             <Button type="primary">Make priority</Button>
-        </fethcer.Form>
+        </fetcher.Form>
     );
 }
 

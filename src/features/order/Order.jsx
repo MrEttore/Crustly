@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useEffect } from 'react';
 
 import { useFetcher, useLoaderData } from 'react-router-dom';
@@ -33,11 +34,11 @@ function Order() {
     const deliveryIn = calcMinutesLeft(estimatedDelivery);
 
     return (
-        <div className="mx-auto mt-8 max-w-2xl space-y-8 rounded-3xl bg-cream px-4 py-8 shadow-elegant">
-            <div className="flex flex-wrap items-center justify-between gap-2 text-primary-dark">
+        <div className="mx-auto mt-8 max-w-2xl space-y-8 rounded-2xl bg-cream px-4 py-8 shadow-elegant ring-1 ring-zinc-200">
+            <div className="flex flex-wrap items-center justify-between gap-2 text-primary">
                 <h2 className="font-display text-2xl font-bold">
                     Order{' '}
-                    <span className="rounded-md bg-gold/40 p-1 text-primary-dark">
+                    <span className="rounded-md bg-zinc-100 p-1 text-primary">
                         #{id}
                     </span>{' '}
                     status
@@ -45,33 +46,33 @@ function Order() {
 
                 <div className="space-x-2">
                     {priority && (
-                        <span className="rounded-md bg-gold px-3 py-1 text-sm font-bold uppercase tracking-wide text-primary-dark">
+                        <span className="rounded-md bg-zinc-900 px-3 py-1 text-sm font-medium uppercase tracking-wide text-cream">
                             Priority
                         </span>
                     )}
-                    <span className="rounded-md bg-primary-dark px-3 py-1 text-sm font-bold uppercase tracking-wide text-cream">
+                    <span className="rounded-md bg-zinc-900 px-3 py-1 text-sm font-medium uppercase tracking-wide text-cream">
                         {status}
                     </span>
                 </div>
             </div>
 
-            <div className="flex flex-col gap-2 text-lg font-semibold text-primary-dark">
+            <div className="flex flex-col gap-2 text-lg font-medium text-primary">
                 <span>
                     Estimated delivery:{' '}
-                    <span className="font-bold text-gold">
+                    <span className="font-medium text-primary">
                         {formatDate(estimatedDelivery)}
                     </span>{' '}
                     ({deliveryIn} min)
                 </span>
                 <span>
                     Total:{' '}
-                    <span className="font-bold text-gold">
+                    <span className="font-medium text-primary">
                         {formatCurrency(orderPrice + (priorityPrice || 0))}
                     </span>
                 </span>
             </div>
 
-            <ul className="divide-y divide-gold/30">
+            <ul className="divide-y divide-zinc-200">
                 {cart.map((item) => (
                     <OrderItem
                         item={item}

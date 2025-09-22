@@ -7,7 +7,7 @@ function EmptyCart() {
                 &larr; Back to menu
             </LinkButton>
 
-            <p className="mt-6 font-display text-lg font-bold text-primary-dark">
+            <p className="mt-6 font-display text-lg font-semibold text-primary">
                 Your cart is still empty. Start adding some pizzas{' '}
                 <span role="img" aria-label="pizza">
                     🍕

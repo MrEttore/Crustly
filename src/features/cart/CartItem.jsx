@@ -12,11 +12,11 @@ function CartItem({ item }) {
 
     return (
         <li className="flex flex-col gap-2 py-4 sm:flex-row sm:items-center sm:justify-between">
-            <p className="mb-1 font-display text-lg font-semibold text-primary-dark sm:mb-0">
+            <p className="mb-1 font-display text-lg font-semibold text-primary sm:mb-0">
                 {quantity}&times; {name}
             </p>
             <div className="flex items-center justify-between gap-2 sm:gap-6">
-                <p className="rounded-full bg-gold/80 px-4 py-1 text-base font-bold text-primary-dark shadow-elegant">
+                <p className="rounded-full bg-zinc-100 px-3 py-1 text-base font-medium text-primary shadow-elegant">
                     {formatCurrency(totalPrice)}
                 </p>
                 <UpdateItemQuantity

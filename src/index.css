@@ -6,20 +6,16 @@
     html {
         font-family: theme('fontFamily.sans');
         background-color: theme('colors.cream.DEFAULT');
-        color: theme('colors.primary.dark');
+        color: theme('colors.primary.DEFAULT');
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
     body {
-        background: linear-gradient(
-            120deg,
-            theme('colors.cream.DEFAULT') 60%,
-            theme('colors.primary.light') 100%
-        );
+        background: theme('colors.cream.DEFAULT');
         min-height: 100vh;
         font-family: theme('fontFamily.sans');
         font-size: 1rem;
-        color: theme('colors.primary.dark');
+        color: theme('colors.primary.DEFAULT');
     }
     h1,
     h2,
@@ -29,26 +25,26 @@
     h6 {
         font-family: theme('fontFamily.display');
         color: theme('colors.primary.DEFAULT');
-        font-weight: 700;
-        letter-spacing: 0.01em;
+        font-weight: 600;
+        letter-spacing: 0;
     }
 }
 
 @layer components {
     .input {
-        @apply rounded-2xl border border-cream-dark bg-cream px-4 py-2 text-base font-normal text-primary-dark shadow-elegant transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring-2 focus:ring-primary-dark focus:ring-offset-2 md:px-6 md:py-3;
+        @apply rounded-xl border border-zinc-200 bg-cream px-4 py-2 text-base font-normal text-primary shadow-elegant transition-all duration-200 placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-zinc-800 focus:ring-offset-0 md:px-5 md:py-2.5;
     }
 
     /* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
     .loader {
-        width: 45px;
+        width: 36px;
         aspect-ratio: 0.75;
-        --c: no-repeat linear-gradient(theme(colors.gold.DEFAULT) 0 0);
+        --c: no-repeat linear-gradient(theme(colors.zinc.800) 0 0);
         background:
             var(--c) 0% 50%,
             var(--c) 50% 50%,
             var(--c) 100% 50%;
-        background-size: 20% 50%;
+        background-size: 18% 50%;
         animation: loading 1s infinite linear;
     }
 

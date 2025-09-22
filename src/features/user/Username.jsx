@@ -6,7 +6,7 @@ export default function Username() {
     if (!username) return null;
 
     return (
-        <div className="hidden font-display text-base font-bold text-gold md:block">
+        <div className="hidden font-display text-base font-medium text-primary md:block">
             {username}
         </div>
     );

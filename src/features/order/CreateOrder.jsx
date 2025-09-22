@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useState } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -41,14 +42,14 @@ function CreateOrder() {
     if (!cart.length) return <EmptyCart />;
 
     return (
-        <div className="mx-auto mt-8 max-w-2xl rounded-3xl bg-cream px-4 py-8 shadow-elegant">
-            <h2 className="mb-8 font-display text-2xl font-bold text-primary-dark">
+        <div className="mx-auto mt-8 max-w-2xl rounded-2xl bg-cream px-4 py-8 shadow-elegant ring-1 ring-zinc-200">
+            <h2 className="mb-8 font-display text-2xl font-semibold text-primary">
                 Ready to order?
             </h2>
 
             <Form method="POST" action="/order/new" className="space-y-6">
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                    <label className="text-base font-semibold text-primary-dark sm:basis-40">
+                    <label className="text-base font-medium text-primary sm:basis-40">
                         First Name
                     </label>
                     <input
@@ -61,7 +62,7 @@ function CreateOrder() {
                 </div>
 
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center">
-                    <label className="text-base font-semibold text-primary-dark sm:basis-40">
+                    <label className="text-base font-medium text-primary sm:basis-40">
                         Phone number
                     </label>
                     <div className="grow">
@@ -80,7 +81,7 @@ function CreateOrder() {
                 </div>
 
                 <div className="relative flex flex-col gap-4 sm:flex-row sm:items-center">
-                    <label className="text-base font-semibold text-primary-dark sm:basis-40">
+                    <label className="text-base font-medium text-primary sm:basis-40">
                         Address
                     </label>
                     <div className="grow">
@@ -122,9 +123,12 @@ function CreateOrder() {
                         id="priority"
                         value={withPriority}
                         onChange={(e) => setWithPriority(e.target.checked)}
-                        className="h-6 w-6 accent-[#842424]/60 focus:outline-none focus:ring focus:ring-[#842424] focus:ring-offset-2"
+                        className="h-5 w-5 accent-zinc-900 focus:outline-none"
                     />
-                    <label htmlFor="priority" className="font-extrabold">
+                    <label
+                        htmlFor="priority"
+                        className="font-medium text-primary"
+                    >
                         Want to yo give your order priority?
                     </label>
                 </div>

@@ -22,15 +22,15 @@ function Cart() {
     return (
         <div className="px-4 py-3">
             <LinkButton to="/menu">&larr; Back to menu</LinkButton>
-            <h2 className="mt-7 font-display text-2xl font-bold text-primary-dark">
+            <h2 className="mt-7 font-display text-2xl font-semibold text-primary">
                 Your cart,
-                <span className="font-display font-bold text-gold">
+                <span className="font-display font-semibold text-primary">
                     {' '}
                     {username}
                 </span>
             </h2>
 
-            <ul className="mt-3 divide-y divide-gold/30 border-b border-gold/30">
+            <ul className="mt-3 divide-y divide-zinc-200 border-b border-zinc-200">
                 {cart.map((item) => (
                     <CartItem item={item} key={item.pizzaId} />
                 ))}
