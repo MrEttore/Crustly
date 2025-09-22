@@ -8,9 +8,14 @@ export default function Header() {
         <header className="flex items-center justify-between border-b border-zinc-200 bg-cream px-4 py-3 font-display text-lg font-semibold text-primary sm:px-8">
             <Link
                 to="/"
-                className="font-display text-xl font-semibold tracking-tight text-primary transition-colors hover:text-zinc-700"
+                className="flex items-center font-display text-xl font-semibold tracking-tight text-primary transition-colors hover:text-zinc-700"
             >
-                Crustly
+                <img
+                    src="/crustly-logo.svg"
+                    alt="Crustly Logo"
+                    className="ml-2 inline h-6 w-6"
+                />
+                rustly
             </Link>
             <SearchOrder />
             <Username />

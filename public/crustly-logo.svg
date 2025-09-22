@@ -1,0 +1,16 @@
+<svg width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Crustly logo" xmlns="http://www.w3.org/2000/svg">
+  <title>Crustly</title>
+  <defs>
+    <mask id="slice-mask" maskUnits="userSpaceOnUse">
+      <rect width="100%" height="100%" fill="black"/>
+      <!-- Full pizza -->
+      <circle cx="32" cy="32" r="24" fill="white"/>
+      <!-- Remove a sector (the missing slice) to hint a 'C' and pizza -->
+      <path d="M32 32 L53.75 21.86 A24 24 0 0 1 53.75 42.14 Z" fill="black"/>
+    </mask>
+  </defs>
+  <!-- Filled circle with a clean missing slice: minimalist pizza + 'C' monogram -->
+  <g mask="url(#slice-mask)">
+    <circle cx="32" cy="32" r="24" fill="currentColor"/>
+  </g>
+</svg>

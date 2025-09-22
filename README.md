@@ -1,6 +1,35 @@
-# 🍕 Crustly – Order Pizza with a Crunch
+# 🍕 Crustly — Pizza, simplified
 
-Crustly is a modern React + Vite web app that allows users to easily order delicious pizzas online. Built to explore advanced React Router features and best practices in state management with Redux Toolkit, Crustly offers a seamless ordering experience without the need for user accounts.
+Crustly is a minimalist React + Vite web app for ordering pizza—fast. It showcases modern React Router data APIs, Redux Toolkit for state, and a clean, neutral UI built with Tailwind. No accounts, no fuss: just your name, address, and hot pizza on the way.
+
+## 🎨 Design System (Minimalism)
+
+- Neutral-first palette (ink on white), accents used sparingly
+- Generous whitespace, subtle dividers (zinc-200), soft elevation
+- Calm typography (Inter/system), consistent rhythm and spacing
+- Clear focus states, accessible contrasts
+- Taglines:
+  - Primary: “Pizza, simplified.”
+  - Short/tab: “Hot, Fast, Simple”
+
+### Logos
+
+- Icon: `public/crustly-logo.svg` (pizza slice cut-out forming a “C”)
+- Lockup: `public/crustly-logo-lockup.svg` (icon + wordmark)
+
+Usage:
+
+```html
+<img src="/crustly-logo.svg" alt="Crustly" />
+<img src="/crustly-logo-lockup.svg" alt="Crustly" />
+```
+
+Tips:
+
+- SVGs use `currentColor`. Set `color: #111827` on light backgrounds, or `#fff` on dark.
+- Keep generous whitespace around the mark (≥ 1/3 of icon size).
+
+---
 
 ## 🚀 Tech Stack
 
@@ -37,6 +66,28 @@ Try it out here: **[crustly.netlify.app](https://crustly.netlify.app)**
 - [ ] Store past orders in local storage  
 - [ ] Dark mode support  
 - [ ] Better accessibility and keyboard navigation  
+
+## ⚙️ Setup
+
+Create an `.env.local` file with your API endpoint:
+
+```bash
+VITE_RESTAURANT_API_URL=https://your-api.example.com
+```
+
+Run locally:
+
+```bash
+npm install
+npm run dev
+```
+
+Build & preview:
+
+```bash
+npm run build
+npm run preview
+```
 
 ## 👨‍🍳 Author
 

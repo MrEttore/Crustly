@@ -9,10 +9,10 @@ function Home() {
     return (
         <div className="my-10 rounded-3xl bg-cream p-10 text-center shadow-elegant ring-1 ring-zinc-200 sm:my-16">
             <h1 className="mb-8 font-display text-4xl font-semibold text-primary md:text-5xl">
-                The best pizza.
+                Pizza, simplified.
                 <br />
                 <span className="text-xl font-normal text-zinc-600 md:text-2xl">
-                    Straight out of the oven, straight to you.
+                    From oven to doorstep - Hot, Fast, Simple
                 </span>
             </h1>
 
@@ -20,7 +20,7 @@ function Home() {
                 <CreateUser />
             ) : (
                 <Button to="/menu" type="primary">
-                    Continue ordering, {username}
+                    Back to the menu, {username}
                 </Button>
             )}
         </div>
