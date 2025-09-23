@@ -1,6 +1,6 @@
-# 🍕 Crustly — Pizza, simplified
+# 🍕 Crustly - Pizza, simplified
 
-Crustly is a minimalist React + Vite web app for ordering pizza—fast. It showcases modern React Router data APIs, Redux Toolkit for state, and a clean, neutral UI built with Tailwind. No accounts, no fuss: just your name, address, and hot pizza on the way.
+Crustly is a minimalist React + Vite web app for ordering pizza, fast. It showcases modern React Router data APIs, Redux Toolkit for state, and a clean, neutral UI built with Tailwind. No accounts, no fuss: just your name, address, and hot pizza on the way.
 
 ## 🎨 Design System (Minimalism)
 
@@ -8,28 +8,6 @@ Crustly is a minimalist React + Vite web app for ordering pizza—fast. It showc
 - Generous whitespace, subtle dividers (zinc-200), soft elevation
 - Calm typography (Inter/system), consistent rhythm and spacing
 - Clear focus states, accessible contrasts
-- Taglines:
-    - Primary: “Pizza, simplified.”
-    - Short/tab: “Hot, Fast, Simple”
-
-### Logos
-
-- Icon: `public/crustly-logo.svg` (pizza slice cut-out forming a “C”)
-- Lockup: `public/crustly-logo-lockup.svg` (icon + wordmark)
-
-Usage:
-
-```html
-<img src="/crustly-logo.svg" alt="Crustly" />
-<img src="/crustly-logo-lockup.svg" alt="Crustly" />
-```
-
-Tips:
-
-- SVGs use `currentColor`. Set `color: #111827` on light backgrounds, or `#fff` on dark.
-- Keep generous whitespace around the mark (≥ 1/3 of icon size).
-
----
 
 ## 🚀 Tech Stack
 
@@ -60,19 +38,13 @@ Try it out here: **[crustly.netlify.app](https://crustly.netlify.app)**
 - **Local State**: Managed globally via Redux for cart items and user details.
 - **Tailwind**: Ensures fast prototyping and consistent styling across components.
 
-## 🧪 Future Enhancements
-
-- [ ] Add toast notifications for order events
-- [ ] Store past orders in local storage
-- [ ] Dark mode support
-- [ ] Better accessibility and keyboard navigation
-
 ## ⚙️ Setup
 
 Create an `.env.local` file with your API endpoint:
 
 ```bash
 VITE_RESTAURANT_API_URL=https://your-api.example.com
+VITE_GEOLOCATION_API_URL=https://your-geolocation-api.example.com
 ```
 
 Run locally:
