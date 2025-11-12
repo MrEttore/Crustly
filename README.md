@@ -1,10 +1,10 @@
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-light.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="assets/logo-dark.svg" />
-    <img src="assets/logo-dark.svg" alt="Crustly" width="400" draggable="false" />
-  </picture>
-</p>
+<div style="background:#ffffff; width:100%; padding:24px 0;">
+	<p align="center" style="margin:0; transform:translateX(60px);">
+		<img src="assets/logo.svg" alt="Crustly" width="400" draggable="false" />
+	</p>
+</div>
+
+<br/>
 
 # Crustly <!-- omit in toc -->
 
