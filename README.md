@@ -1,5 +1,9 @@
 <p align="center">
-  <img src="assets/logo.svg" alt="Logo" width="300" draggable="false"/>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="assets/logo-light.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="assets/logo-dark.svg" />
+    <img src="assets/logo-dark.svg" alt="Crustly" width="300" draggable="false" />
+  </picture>
 </p>
 
 # Crustly <!-- omit in toc -->
