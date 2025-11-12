@@ -1,7 +1,9 @@
-<div style="background:#ffffff; width:100%; padding:24px 0;">
-	<p align="center" style="margin:0; transform:translateX(60px);">
-		<img src="assets/logo.svg" alt="Crustly" width="400" draggable="false" />
-	</p>
+ <div align="center">
+  <picture>
+    <source srcset="/assets/logo-light.svg" media="(prefers-color-scheme: dark)" width="400"/>
+    <source srcset="/assets/logo-dark.svg" media="(prefers-color-scheme: light)" width="400"/>
+    <img src="/assets/logo-dark.svg" alt="Crustly" width="400"/>
+  </picture>
 </div>
 
 <br/>
