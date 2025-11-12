@@ -1,8 +1,8 @@
  <div align="center">
   <picture >
-    <source srcset="/assets/logo-light-cropped.svg" media="(prefers-color-scheme: dark)" width="400"/>
-    <source srcset="/assets/logo-dark-cropped.svg" media="(prefers-color-scheme: light)" width="400"/>
-    <img src="/assets/logo-dark-cropped.svg" alt="Crustly" width="400"/>
+    <source srcset="/assets/logo-light-cropped.svg" media="(prefers-color-scheme: dark)" width="300"/>
+    <source srcset="/assets/logo-dark-cropped.svg" media="(prefers-color-scheme: light)" width="300"/>
+    <img src="/assets/logo-dark-cropped.svg" alt="Crustly" width="300"/>
   </picture>
 </div>
 
