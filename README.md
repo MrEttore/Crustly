@@ -1,9 +1,9 @@
- <div align="center">
-  <picture>
-    <source srcset="/assets/logo-light.svg" media="(prefers-color-scheme: dark)" width="500"/>
-    <source srcset="/assets/logo-dark.svg" media="(prefers-color-scheme: light)" width="500"/>
-    <img src="/assets/logo-dark.svg" alt="Crustly" width="500"/>
-  </picture>
+<div style="text-align:center; padding-left:40px;">
+	<picture>
+		<source srcset="/assets/logo-light.svg" media="(prefers-color-scheme: dark)" width="500"/>
+		<source srcset="/assets/logo-dark.svg" media="(prefers-color-scheme: light)" width="500"/>
+		<img src="/assets/logo-dark.svg" alt="Crustly" width="500" style="display:inline-block;"/>
+	</picture>
 </div>
 
 <br/>
