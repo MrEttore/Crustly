@@ -36,22 +36,22 @@ Crustly is a focused SPA that showcases a clean user flow for ordering pizza wit
 
 Highlights
 
-- Minimalist, accessible UI with Tailwind (neutral-first palette, generous whitespace)
 - Route-level data loading and mutations with React Router loaders/actions
 - Global state with Redux Toolkit, including async thunks for geolocation
-- Netlify deployment
+- Minimalist, accessible UI with Tailwind (neutral-first palette, generous whitespace)
 - No auth or payments: fast guest checkout and delivery on arrival
+- Netlify deployment
 
 ## Tech Stack
 
-- Language: JavaScript (ES Modules)
-- Frontend: React 18 + Vite 4
-- Routing: React Router v6.30+
+- Language: JavaScript
+- Frontend: React
+- Routing: React Router
 - State: Redux Toolkit + React Redux
 - Styling: Tailwind CSS
 - Build Tool: Vite
 - Lint/Format: ESLint, Prettier
-- Hosting: Netlify (SPA redirect configured)
+- Hosting: Netlify
 
 ## Features
 
@@ -97,7 +97,7 @@ Highlights
 
 ### Environment Variables
 
-Create a `.env` (or `.env.local`) at the project root and provide the required variables.
+Create a `.env` at the project root and provide the required variables.
 
 ```bash
 VITE_RESTAURANT_API_URL=https://react-fast-pizza-api.jonas.io/api
@@ -106,7 +106,7 @@ VITE_GEOLOCATION_API_URL=https://api.bigdatacloud.net/data/reverse-geocode-clien
 
 Notes
 
-- These variables are browser-exposed at build time (Vite uses the `VITE_` prefix for client envs).
+- These variables are browser-exposed at build time
 - Netlify deploys as an SPA; `public/netlify.toml` already configures the catch-all redirect to `index.html`.
 
 ### Installation
@@ -138,16 +138,14 @@ This frontend consumes two external services configured via environment variable
 
 Restaurant API (base: `VITE_RESTAURANT_API_URL`)
 
-- GET /menu — fetch menu items
-- GET /order/:id — fetch order by ID
-- POST /order — create new order
-- PATCH /order/:id — update existing order
+- GET /menu - fetch menu items
+- GET /order/:id - fetch order by ID
+- POST /order - create new order
+- PATCH /order/:id - update existing order
 
 Geocoding API (base: `VITE_GEOLOCATION_API_URL`)
 
-- GET ?latitude=<lat>&longitude=<lng> — reverse geocode to address
-
-> Endpoints are expected to return JSON; see `src/services/apiRestaurant.js` and `src/services/apiGeocoding.js` for exact usage.
+- GET ?latitude=<lat>&longitude=<lng> - reverse geocode to address
 
 ## License
 
@@ -157,7 +155,6 @@ No license has been specified yet. All rights reserved. If you want to use or di
 
 - Built with React, React Router, Redux Toolkit, Tailwind, and Vite
 - Deployed on Netlify
--
 
 ## Author
 
