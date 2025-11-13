@@ -1,66 +1,161 @@
-# 🍕 Crustly - Pizza, simplified
+ <div align="center">
+  <picture >
+    <source srcset="/assets/logo-light.svg" media="(prefers-color-scheme: dark)" width="300"/>
+    <source srcset="/assets/logo-dark.svg" media="(prefers-color-scheme: light)" width="300"/>
+    <img src="/assets/logo-dark.svg" alt="Crustly" width="300"/>
+  </picture>
+</div>
 
-Crustly is a minimalist React + Vite web app for ordering pizza, fast. It showcases modern React Router data APIs, Redux Toolkit for state, and a clean, neutral UI built with Tailwind. No accounts, no fuss: just your name, address, and hot pizza on the way.
+<br/>
 
-## 🎨 Design System (Minimalism)
+# Crustly <!-- omit in toc -->
 
-- Neutral-first palette (ink on white), accents used sparingly
-- Generous whitespace, subtle dividers (zinc-200), soft elevation
-- Calm typography (Inter/system), consistent rhythm and spacing
-- Clear focus states, accessible contrasts
+Pizza, simplified. A minimalist SPA to browse a pizza menu, build a cart, and place or track an order without accounts or friction.
 
-## 🚀 Tech Stack
+[Live Demo](https://crustly.netlify.app/)
 
-- **React** (with [Vite](https://vitejs.dev/)) – Blazing-fast build tool and modern React development
-- **React Router v6.10+** – Utilizes `createBrowserRouter` for advanced data loading
-- **Redux Toolkit** – For global state management with `createAsyncThunk` for async logic
-- **Tailwind CSS** – Utility-first CSS for fast and responsive UI styling
-- **Geolocation API** – To fetch the user's current address
+## Table of Contents <!-- omit in toc -->
 
-## 📦 Features
+- [Overview](#overview)
+- [Tech Stack](#tech-stack)
+- [Features](#features)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
+    - [Environment Variables](#environment-variables)
+    - [Installation](#installation)
+    - [Run Locally](#run-locally)
+- [API Reference](#api-reference)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+- [Author](#author)
 
-- **Dynamic Menu** – Fetches real-time pizza menu via API
-- **Cart System** – Add and manage multiple pizzas before checkout
-- **Guest Checkout** – No login required, just name, address, and phone
-- **Geolocation Support** – Autodetect user address for convenience
-- **Order Tracking** – Unique order ID to check order status anytime
-- **Priority Orders** – Option to prioritize an order for an extra 20% fee
-- **Payment on Delivery** – No in-app payments, just good ol’ doorstep delivery
+## Overview
 
-## 🔗 Live Demo
+Crustly is a focused SPA that showcases a clean user flow for ordering pizza with modern React patterns. It emphasizes a calm, neutral UI (Tailwind), route‑level data APIs (React Router loaders/actions), and predictable state (Redux Toolkit). Users can add pizzas to a cart, set priority, auto‑fill their address via geolocation, place an order, and later look it up by ID.
 
-Try it out here: **[crustly.netlify.app](https://crustly.netlify.app)**
+Highlights
 
-## 🏗️ Architecture Notes
+- Route-level data loading and mutations with React Router loaders/actions
+- Global state with Redux Toolkit, including async thunks for geolocation
+- Minimalist, accessible UI with Tailwind (neutral-first palette, generous whitespace)
+- No auth or payments: fast guest checkout and delivery on arrival
+- Netlify deployment
 
-- **Data Loading**: React Router’s `createBrowserRouter` enables route-level data fetching and loaders for a cleaner data flow.
-- **Redux Toolkit**: `createAsyncThunk` is used for async operations like retrieving geolocation data.
-- **Local State**: Managed globally via Redux for cart items and user details.
-- **Tailwind**: Ensures fast prototyping and consistent styling across components.
+## Tech Stack
 
-## ⚙️ Setup
+- Language: JavaScript
+- Frontend: React
+- Routing: React Router
+- State: Redux Toolkit + React Redux
+- Styling: Tailwind CSS
+- Build Tool: Vite
+- Lint/Format: ESLint, Prettier
+- Hosting: Netlify
 
-Create an `.env.local` file with your API endpoint:
+## Features
 
-```bash
-VITE_RESTAURANT_API_URL=https://your-api.example.com
-VITE_GEOLOCATION_API_URL=https://your-geolocation-api.example.com
+- Dynamic menu fetched from an open-source restaurant API
+- Cart system with quantity updates and removal
+- Guest checkout with name, address, and phone
+- Geolocation-based address auto-fill
+- Order tracking via unique order ID
+- Priority orders with +20% fee option
+- Payment on delivery (no in-app payments)
+
+## Project Structure
+
+```text
+.
+├─ index.html
+├─ package.json
+├─ tailwind.config.js
+├─ vite.config.js
+├─ public/
+│  └─ netlify.toml           # SPA redirect for Netlify
+└─ src/
+	├─ App.jsx                # Routes, loaders/actions wiring
+	├─ main.jsx               # React root + Redux provider
+	├─ index.css              # Tailwind entry
+	├─ store.js               # Redux store
+	├─ features/
+	│   ├─ cart/               # Cart UI + slice
+	│   ├─ menu/               # Menu UI + data loader
+	│   └─ order/              # Create, view, update order
+	├─ services/
+	│   ├─ apiRestaurant.js    # Menu/Order API client
+	│   └─ apiGeocoding.js     # Reverse geocoding client
+	├─ ui/                    # Layout, common components
+	└─ utils/                 # Helpers
 ```
 
-Run locally:
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ and npm
+
+### Environment Variables
+
+Create a `.env` at the project root and provide the required variables.
 
 ```bash
+VITE_RESTAURANT_API_URL=https://react-fast-pizza-api.jonas.io/api
+VITE_GEOLOCATION_API_URL=https://api.bigdatacloud.net/data/reverse-geocode-client
+```
+
+Notes
+
+- These variables are browser-exposed at build time
+- Netlify deploys as an SPA; `public/netlify.toml` already configures the catch-all redirect to `index.html`.
+
+### Installation
+
+Clone the repository and install dependencies:
+
+```sh
+git clone https://github.com/MrEttore/Crustly.git
+cd Crustly
 npm install
-npm run dev
 ```
 
-Build & preview:
+### Run Locally
 
-```bash
+```sh
+# Start dev server
+npm run dev
+
+# Build production assets
 npm run build
+
+# Preview the production build locally
 npm run preview
 ```
 
-## 👨‍🍳 Author
+## API Reference
 
-Built with love (and hunger) by **Ettore** 🫶🏻
+This frontend consumes two external services configured via environment variables.
+
+Restaurant API (base: `VITE_RESTAURANT_API_URL`)
+
+- GET /menu - fetch menu items
+- GET /order/:id - fetch order by ID
+- POST /order - create new order
+- PATCH /order/:id - update existing order
+
+Geocoding API (base: `VITE_GEOLOCATION_API_URL`)
+
+- GET ?latitude=<lat>&longitude=<lng> - reverse geocode to address
+
+## License
+
+No license has been specified yet. All rights reserved. If you want to use or distribute this project, please contact me.
+
+## Acknowledgements
+
+- Built with React, React Router, Redux Toolkit, Tailwind, and Vite
+- Deployed on Netlify
+
+## Author
+
+Built with love (and hunger) by **Ettore** 👨‍🍳

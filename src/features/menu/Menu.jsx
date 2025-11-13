@@ -7,6 +7,8 @@ function Menu() {
     // 3a. Get data from loader with custom hook.
     const menu = useLoaderData();
 
+    console.log(menu);
+
     return (
         <ul className="divide-y divide-zinc-200 px-2 md:px-0">
             {menu.map((pizza) => (

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" aria-label="Crustly logo" role="img" viewBox="8.94854586129754 8.581005586592179 154.98881431767336 48.625698324022345" style="max-height: 500px" width="154.98881431767336" height="48.625698324022345">
+  <title>Crustly</title>
+  <defs>
+    <mask maskUnits="userSpaceOnUse" id="slice-mask-h">
+      <rect fill="black" height="100%" width="100%"/>
+      <circle fill="white" r="20" cy="32" cx="32"/>
+      <path fill="black" d="M32 32 L50.13 23.55 A20 20 0 0 1 50.13 40.45 Z"/>
+    </mask>
+  </defs>
+  <g mask="url(#slice-mask-h)">
+    <circle fill="currentColor" r="20" cy="32" cx="32"/>
+  </g>
+  <text letter-spacing="-0.5" font-family="Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif" font-weight="600" font-size="28" fill="currentColor" y="40" x="72">Crustly</text>
+</svg>

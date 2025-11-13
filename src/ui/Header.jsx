@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+import logo from '../assets/logo.svg';
 import SearchOrder from '../features/order/SearchOrder';
 import Username from '../features/user/Username';
 
@@ -11,9 +12,9 @@ export default function Header() {
                 className="flex items-center font-display text-xl font-semibold tracking-tight text-primary transition-colors hover:text-zinc-700"
             >
                 <img
-                    src="/crustly-logo.svg"
+                    src={logo}
                     alt="Crustly Logo"
-                    className="ml-2 inline h-6 w-6"
+                    className="ml-2 inline h-8 w-8"
                 />
                 rustly
             </Link>

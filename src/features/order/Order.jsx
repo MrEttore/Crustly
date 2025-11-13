@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
 import { useEffect } from 'react';
 
 import { useFetcher, useLoaderData } from 'react-router-dom';

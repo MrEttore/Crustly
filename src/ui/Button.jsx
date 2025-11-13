@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 
-// eslint-disable-next-line react/prop-types
 export default function Button({ children, disabled, to, type, onClick }) {
     const base =
         'inline-block text-base rounded-xl font-medium tracking-wide transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-zinc-800 focus:ring-offset-0 disabled:cursor-not-allowed shadow-elegant';

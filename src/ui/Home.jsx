@@ -9,10 +9,10 @@ function Home() {
     return (
         <div className="my-10 rounded-3xl bg-cream p-10 text-center sm:my-16">
             <h1 className="mb-8 font-display text-4xl font-semibold text-primary md:text-5xl">
-                Pizza, simplified.
+                Pizza simplified.
                 <br />
                 <span className="text-xl font-normal text-zinc-600 md:text-2xl">
-                    From oven to doorstep - Hot, Fast, Simple
+                    From oven to doorstep. Hot, Fast, Simple
                 </span>
             </h1>
 
