@@ -66,6 +66,4 @@ export const fetchAddress = createAsyncThunk(
     },
 );
 
-// REUSABLE SELECTORS:
-
 export const getUsername = (state) => state.user.username;

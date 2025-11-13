@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
 import { useFetcher } from 'react-router-dom';
 
 import { updateOrder } from '../../services/apiRestaurant';

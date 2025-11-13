@@ -48,10 +48,6 @@ export const {
 
 export default cartSlice.reducer;
 
-// REUSABLE SELECTORS:
-// Good practice: write reusable selectors in the slice to use in multiple components.
-// Good practice: do data manipulation directly in the selector.
-
 export const getTotalCartQuantity = (state) =>
     state.cart.cart.reduce((sum, item) => sum + item.quantity, 0);
 
